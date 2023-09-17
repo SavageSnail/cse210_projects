@@ -42,7 +42,7 @@ class Program
 
         else 
         {
-            Console.WriteLine("Oof. Try again next semester!");
+            Console.WriteLine("Oof, that sucks. Try again next semester!");
         }
 
         
