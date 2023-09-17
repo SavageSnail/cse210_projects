@@ -9,27 +9,31 @@ class Program
         string valueFromUser = Console.ReadLine();
 
         int x = int.Parse(valueFromUser);
+        string letter = ("Test");
 
+        
         if (x >= 90)
         {
-            Console.WriteLine("A");
+            letter = ("A");
         }
         else if (x >=80)
         {
-            Console.WriteLine("B");
+            letter = ("B");
         }
         else if (x >= 70)
         {
-            Console.WriteLine("C");
+             letter = ("C");
         }
         else if (x >=60)
         {
-            Console.WriteLine("D");
+             letter = ("D");
         }
         else
         {
-            Console.WriteLine("F");
+             letter = ("F");
         }
+
+        Console.WriteLine($"You've earned an {letter}!");
 
         if (x >= 70)
         {
@@ -40,6 +44,10 @@ class Program
         {
             Console.WriteLine("Oof. Try again next semester!");
         }
+
+        
+
+
 
     }
 }
