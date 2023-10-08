@@ -1,22 +1,15 @@
-using System.IO; 
+using System.IO;
+using System.Net;
 
 public class Write
+//the variables to be saved and added to the journal
 {
+    public string theCurrentTime;
+    public string _gennedprompt;
     public string _userInput;
-    public DateTime theCurrentTime = DateTime.Now;
-    
 
 
-
-
-
-
-
-
-
-
-
-
+    // ALL THIS BELOW is just trial and error stuff
     /*
     //string dateText = theCurrentTime.ToShortDateString();
     public string _userEntry;
