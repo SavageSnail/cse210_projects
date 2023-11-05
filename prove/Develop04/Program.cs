@@ -49,6 +49,8 @@ class Program
                 listing.Welcome("listing");
                 listing.SetDuration();
 
+                listing.Run();
+
                 listing.Bye();
             }
 
