@@ -29,6 +29,7 @@ class Program
 
             if (userChoice == 1)
             {
+                breathing.SetDescript();
                 breathing.Welcome("breathing");
                 breathing.SetDuration();
                 breathing.SetTimes();
@@ -38,17 +39,20 @@ class Program
 
             else if (userChoice == 2)
             {
+                reflection.SetDescript();
                 reflection.Welcome("reflection");
                 reflection.SetDuration();
-
+                reflection.GetPrompt();
+                reflection.Run();
                 reflection.Bye();
             }
 
             else if (userChoice == 3)
             {
+                listing.SetDescript();
                 listing.Welcome("listing");
                 listing.SetDuration();
-
+                listing.GetPrompt();
                 listing.Run();
 
                 listing.Bye();

@@ -3,6 +3,11 @@ class Breathing: Activity
     private int _inTime;
     private int _outTime;
 
+
+    public string SetDescript()
+    {
+        return _description = "This activity will help you relax by walking you through slowly breathing in and out. Clear your mind and focus on your breathing.";
+    }
     //Made a function to give the user the choice of whether or not they'd like to set their own in/out times
     public void SetTimes()
     {
@@ -12,6 +17,7 @@ class Breathing: Activity
         Console.Write("type '1' for yes, 2 for no: ");
         int pick = int.Parse(Console.ReadLine());
         Console.WriteLine("");
+
         //if they set it
         if (pick == 1)
         {
@@ -20,11 +26,22 @@ class Breathing: Activity
             Console.Write("Seconds to breath out: ");
             _outTime = int.Parse(Console.ReadLine());
         }
+
         // if they don't care
         else
         {
-            _inTime = 5;
-            _outTime = 6;
+            //precaustions if the user picks a really short duration time
+            if (_duration <= 9)
+            {
+                _inTime = _duration/2;
+                _outTime = _duration/2;
+            }
+            
+            else
+            {
+                _inTime = 4;
+                _outTime = 5;
+            }
         }
 
         Console.Write("Ok, for reals this time... "); // 

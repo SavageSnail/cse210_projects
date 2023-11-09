@@ -1,23 +1,30 @@
+using System.Security.Cryptography.X509Certificates;
+
 class Activity 
 {
     protected string _activityName;
+    protected string _description;
 
     protected int _duration = 0;
 
     public void Welcome(string name)
     {
+        Console.Clear();
         _activityName = name;
         Console.WriteLine($"Welcome to the {_activityName} activity!");
+        Console.WriteLine(_description);
     }
 
     public void SetDuration()
     {
+        // _activityName = name;
+        // Console.WriteLine($"Welcome to the {_activityName} activity!");
         Console.Write("How long, in seconds, would you like to participate in this activity? ");
         _duration = int.Parse(Console.ReadLine());
 
         Console.Clear();
 
-        Console.WriteLine("Get ready...");
+        Console.WriteLine("Let's begin...");
         this.Spinner();
     }
 
@@ -31,33 +38,33 @@ class Activity
         this.Spinner();
     }
 
-    //Below are the spinner and Countdown functions
+    //Below are the spinner and Countdown functions, used all over the program
 
     public void Spinner()
     {
         Console.Write("|");
-        Thread.Sleep(500);
+        Thread.Sleep(400);
         Console.Write("\b \b"); // Erase the + character
         Console.Write("/");
-        Thread.Sleep(500);
+        Thread.Sleep(400);
         Console.Write("\b \b");
         Console.Write("-");
-        Thread.Sleep(500);
+        Thread.Sleep(400);
         Console.Write("\b \b");
         Console.Write("\\");
-        Thread.Sleep(500);
+        Thread.Sleep(400);
         Console.Write("\b \b");
         Console.Write("|");
-        Thread.Sleep(500);
+        Thread.Sleep(400);
         Console.Write("\b \b");
         Console.Write("/");
-        Thread.Sleep(500);
+        Thread.Sleep(400);
         Console.Write("\b \b");
         Console.Write("-");
-        Thread.Sleep(500);
+        Thread.Sleep(400);
         Console.Write("\b \b");
         Console.Write("\\");
-        Thread.Sleep(500);
+        Thread.Sleep(400);
         Console.Write("\b \b");
     }
 

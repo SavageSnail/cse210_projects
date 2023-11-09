@@ -19,7 +19,10 @@ class Listing: Activity
         "What goals are you working towards?"
     };
 
-
+    public string SetDescript()
+    {
+        return _description = "This activity will help you reflect on the good things in your life by having you list as many things as you can to answer the given question.";
+    }
     private double deltaTime()
     {
         TimeSpan ts = this.sw.Elapsed;
@@ -35,19 +38,24 @@ class Listing: Activity
         int pick = random.Next(0,_prompts.Count);
         string prompt = _prompts[pick];
         Console.WriteLine(prompt);
+        Console.Write("Press 'enter' when ready: ");
+        Console.ReadLine();
     }
 
     // Thank you so much for helping us shell this out!!
     public void Run()
     {
-        this.sw.Start();
-        double acc = 0.0;
         List<string> buf = new List<string>();
 
-        Console.WriteLine("Ready...");
+        Console.WriteLine("List as many responses as you can! ");
+        Console.WriteLine("Ready... ");
         base.CountDown(3);
         Console.WriteLine("Go!");
-        Thread.Sleep(1000);
+        Thread.Sleep(500);
+
+        this.sw.Start();
+        double acc = 0.0;
+        int responseCount = 0;
 
         while (acc <= base._duration*1000)
         {
@@ -63,6 +71,7 @@ class Listing: Activity
             {
                 Console.WriteLine("");
                 buf.Add("\n");
+                responseCount++;
             }
             
             else
@@ -74,11 +83,12 @@ class Listing: Activity
         Console.WriteLine("\nTime's up!");
         base.Spinner();
 
-        string bufStr = String.Join<string>("", buf);
-        Console.WriteLine($"Here's what you typed: {bufStr}");
-
-        //int responseCount = 
-        //Console.WriteLine($"Number of items listed: {responseCount}");
+        //string bufStr = String.Join<string>("", buf);
+        //Console.WriteLine($"Here's what you typed: \n {bufStr}");
+        Console.WriteLine(" ");
+        Console.WriteLine($"Number of items listed: {responseCount} ");
+        base.Spinner();
+        base.Spinner();
     }
 
 }
