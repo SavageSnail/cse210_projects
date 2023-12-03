@@ -1,6 +1,7 @@
 class Scoreboard
 {
     private int score = 0;
+    Gadgets gadget = new Gadgets();
 
     public int GetUserInput()
     {
@@ -9,7 +10,7 @@ class Scoreboard
 
     public void EarnPoint(Question question, int userChoice)
     {
-        int _correct = question._correctIndex +1;
+        int _correct = question.GetIndex() -1;
         userChoice = this.GetUserInput();
 
 
@@ -18,17 +19,19 @@ class Scoreboard
             Console.WriteLine("Correct! Score: +1");
             score++;
             Console.WriteLine($"New Score: {score}");
+            gadget.Spinner();
 
         }
         else
         {
             Console.WriteLine($"WRONG!! The correct answer is #{_correct}. Better luck next time!");
+            gadget.Spinner();
         }
     }
 
     public void ShowScore()
     {
-        Console.WriteLine($"Your Score is: {score}");
+        Console.WriteLine($"Your current score is: {score}");
     }
 
 
