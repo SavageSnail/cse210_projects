@@ -2,6 +2,7 @@ class QuestionBank
 {
     protected List<Question> bank = new List<Question>();
 
+    //doing this to get access to the bank
     public QuestionBank()
     {
         bank  = new List<Question>();

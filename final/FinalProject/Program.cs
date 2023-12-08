@@ -5,6 +5,7 @@ class Program
 {
     static void Main(string[] args)
     {
+        // instances of everything I'll need
         QuestionBank questionBank = new QuestionBank();
         NormieBank normieBank = new NormieBank();
         NerdBank nerdBank = new NerdBank();
@@ -13,6 +14,7 @@ class Program
         Gadgets gadget = new Gadgets();
         int menuChoice = 0;
 
+        //main menu
         while (menuChoice != 4)
         {
             Console.Clear();
@@ -41,6 +43,7 @@ class Program
                     Console.WriteLine("Normie stuff it is!");
                     Console.Write("Getting the quiz ready... ");
                     gadget.Spinner();
+                    //make a "normie" question bank to pull from
                     Quiz normieQuiz = new Quiz(normieBank, scoreboard);
 
                     normieQuiz.AskQuestion();
@@ -51,6 +54,7 @@ class Program
                     Console.WriteLine("Halo stuff it is!");
                     Console.Write("Getting the quiz ready... ");
                     gadget.Spinner();
+                    // make a "nerd" question bank to pull from
                     Quiz nerdQuiz = new Quiz(nerdBank, scoreboard);
 
                     nerdQuiz.AskQuestion();
@@ -67,6 +71,7 @@ class Program
 
             else if (menuChoice == 2)
             {
+                //wip
 
             }
 

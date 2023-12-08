@@ -1,5 +1,6 @@
 class Scoreboard
 {
+    // keeps track of score, and checks answers
     private int score = 0;
     Gadgets gadget = new Gadgets();
 

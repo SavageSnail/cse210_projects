@@ -1,5 +1,6 @@
 class Gadgets
 {
+    //here's a class of all the cool stuff I can use throughout the rest of the program
     public void Spinner()
     {
         Console.Write("|");

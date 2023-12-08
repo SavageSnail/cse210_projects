@@ -1,4 +1,7 @@
 // class TimedQuiz: Quiz
+
+        // I'll come back to this once the main quiz class is working
+
 // {
 //     QuestionBank _questionbank = new QuestionBank();
 //     Scoreboard _scoreboard = new Scoreboard();

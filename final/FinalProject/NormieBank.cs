@@ -3,15 +3,16 @@ using System.Security.Cryptography.X509Certificates;
 
 class NormieBank: QuestionBank
 {
-
-    //here's the function that gets all the questions dropped in the bank
+    //general trivia
+    //idea is to compile a question bank when called
     public NormieBank()
     {
         CompileQuestions();
     }
-
+    // I think this is somehow adding null questions??
     public void CompileQuestions()
     {
+        // been trying to add these "question" objects a couple different ways now
         AddQ( new Question(
             "Who painted the 'Mona Lisa'?",
             new string[] {"1. Michelangelo", "2. Da Vinci", "3. Raphael", "4. Donatello"},

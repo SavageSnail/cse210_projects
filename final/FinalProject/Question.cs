@@ -3,6 +3,8 @@ using System.Threading.Tasks.Dataflow;
 
 class Question
 {
+    // THE BASE
+    // this class is intended to be an object
     public string _questionText;
     public string[] _options;
     //wanted to make it private, but I couldn't get scoreboard check to work

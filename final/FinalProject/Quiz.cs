@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 class Quiz 
 {
+    // this class should be running the game (mostly) i.e. meant to make the main program look less clutered
     Scoreboard _scoreboard = new Scoreboard();
     QuestionBank _questionBank = new QuestionBank();
     NormieBank _normieBank = new NormieBank();
