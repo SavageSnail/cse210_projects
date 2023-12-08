@@ -2,29 +2,28 @@ class QuestionBank
 {
     protected List<Question> bank = new List<Question>();
 
-    public void AddQuestion(Question question)
+    public QuestionBank()
+    {
+        bank  = new List<Question>();
+    }
+
+    public void AddQ(Question question)
     {
         bank.Add(question);
     }
 
-    public void UsedQuestion()
+    public void UsedQuestion(Question question)
     {
-
-    }
-
-    public void ClearBank()
-    {
-        foreach (Question question in bank)
-        {
-            bank.Remove(question);
-        }
+        bank.Remove(question);
     }
 
     public Question GetRandomQuestion()
     {
         Random random = new Random();
-        int pickedQ = random.Next(0, bank.Count());
-        Question picked = bank[pickedQ];
+        int pickedInd = random.Next(0, bank.Count());
+        Console.WriteLine(bank.Count());
+        Question picked = bank[pickedInd];
+        Console.WriteLine(picked._questionText);
         return picked;
     }
 

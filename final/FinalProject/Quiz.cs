@@ -1,59 +1,37 @@
+using System;
+using System.Collections.Generic;
+
 class Quiz 
 {
     Scoreboard _scoreboard = new Scoreboard();
     QuestionBank _questionBank = new QuestionBank();
+    NormieBank _normieBank = new NormieBank();
+    NerdBank _nerdBank = new NerdBank();
     Gadgets gadget = new Gadgets();
 
-
-
-    public void MakeDaBank()
+    public Quiz(QuestionBank questionBank, Scoreboard scoreboard)
     {
-        Console.WriteLine("What category would you like to play? ");
-        Console.WriteLine("1. General   // 2. Halo");
-        Console.Write("or 3 for both: ");
-        int userChoice = int.Parse(Console.ReadLine());
+        this._questionBank = questionBank;
+        this._scoreboard = scoreboard;
+    }
 
-        if (userChoice == 1)
-        {
-            Console.WriteLine("Normie stuff it is!");
-            NormieBank normieBank = new NormieBank();
-            //this part no work. Why?
-            normieBank.MakeBank();
-            Console.Write("Getting the quiz ready... ");
-            gadget.Spinner();
-        }
-
-        else if (userChoice == 2)
-        {
-            Console.WriteLine("Halo stuff it is!");
-            Console.Write("Getting the quiz ready... ");
-            gadget.Spinner();
-        }
-
-        else if (userChoice == 3)
-        {
-            Console.WriteLine("Alright, just a bit of both!");
-            Console.Write("Getting the quiz ready... ");
-            gadget.Spinner();
-        }
-
-        else
-        {
-            Console.Write("Oops, that wasn't an option!");
-            gadget.Spinner();
-            Console.WriteLine(" ");
-        }
+    public string Intro()
+    {
+        Console.Clear();
+        return "Welcome to the classic mode quiz! \n In this game mode, you will be asked a series of multiple choice questions. You get a point for each question you get correct! \n Good Luck!"; 
     }
 
     public void AskQuestion()
     {
         string keepPlay;
         do {
-        // Question randomQ = _questionBank.GetRandomQuestion();
-        // Console.WriteLine(randomQ.GetText());
-        // Console.WriteLine(randomQ.GetOptions());
-        // //_scoreboard.GetUserInput();
-        // _scoreboard.EarnPoint(randomQ, _scoreboard.GetUserInput());
+        Console.Clear();
+        Question randomQ = _questionBank.GetRandomQuestion();
+        Console.WriteLine(randomQ._questionText);
+        //Console.WriteLine(randomQ.GetOptions());
+        //_scoreboard.GetUserInput();
+        _scoreboard.EarnPoint(randomQ, _scoreboard.GetUserInput());
+        _questionBank.UsedQuestion(randomQ);
 
         if (_questionBank.BankEmpty())
         {
@@ -64,13 +42,9 @@ class Quiz
             break;
         }
 
+        Console.WriteLine("");
         Console.WriteLine("Would you like to keep playing this mode? (Yes/No): ");
         keepPlay = Console.ReadLine();
-
-        if (keepPlay.ToLower() == "no")
-        {
-            _questionBank.ClearBank();
-        }
 
         } while (keepPlay.ToLower() == "yes");
     }

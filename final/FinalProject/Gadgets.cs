@@ -38,4 +38,13 @@ class Gadgets
             count --;
         }
     }
+
+    public void TypeLine(string text)
+    {
+        foreach (var character in text)
+        {
+            Console.Write(character);
+            Thread.Sleep(30);
+        }
+    }
 }

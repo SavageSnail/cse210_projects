@@ -1,89 +1,106 @@
 using System.ComponentModel;
+using System.Security.Cryptography.X509Certificates;
 
 class NormieBank: QuestionBank
 {
-    private List<Question> _normies = new List<Question>();
 
-    //here's the function that gets all the questions written out
-    public void MakeBank()
+    //here's the function that gets all the questions dropped in the bank
+    public NormieBank()
     {
-        Question question1 = new Question(
+        CompileQuestions();
+    }
+
+    public void CompileQuestions()
+    {
+        AddQ( new Question(
             "Who painted the 'Mona Lisa'?",
             new string[] {"1. Michelangelo", "2. Da Vinci", "3. Raphael", "4. Donatello"},
             1
-        );
-        base.AddQuestion(question1);
+        ));
+        
 
         Question question2 = new Question(
             "Which of the Following is NOT a fruit?",
             new string[] {"1. Rhubarb", "2. Tomatoes", "3. Avacados"},
             0
         );
-        base.AddQuestion(question2);
+        AddQ(question2);
 
         Question question3 = new Question(
-            "",
-            new string[] {""},
-            0
+            "Where was the first example of paper money used?",
+            new string[] {"1. Turkey", "2. Greece", "3. China", "4. United States"},
+            2
         );
-        base.AddQuestion(question3);
+        AddQ(question3);
 
         Question question4 = new Question(
-            "",
-            new string[] {""},
-            0
+            "Who is generally considered the inventor of the motor car?",
+            new string[] {"1. Henry Ford", "2. Karl Benz", "3. Henry M. Lelend", "4. Ferrari"},
+            1
         );
-        base.AddQuestion(question4);
+        AddQ(question4);
 
         Question question5 = new Question(
-            "",
-            new string[] {""},
-            0
+            " Which of the following languages has the longest alphabet?",
+            new string[] {"1. Greek", "2. Arabic", "3. German", "4. Russian"},
+            3
         );
-        base.AddQuestion(question5);
+        AddQ(question5);
 
         Question question6 = new Question(
-            "",
-            new string[] {""},
-            0
+            "Where was the earliest documented case of the Spanish flu?",
+            new string[] {"1. Spain", "2. Mexico", "3. Venezuela", "4. United States"},
+            3
         );
-        base.AddQuestion(question6);
+        AddQ(question6);
 
         Question question7 = new Question(
-            "",
-            new string[] {""},
-            0
+            "What city hosted the 2002 Olympic games?",
+            new string[] {"1. Tokyo", "2. Beijing", "3. Sydney"},
+            2
         );
-        base.AddQuestion(question7);
+        AddQ(question7);
 
         Question question8 = new Question(
-            "",
-            new string[] {""},
+            "What is the largest US State (by landmass)?",
+            new string[] {"1. Alaska", "2. Texas", "3. New York", "4. California"},
             0
         );
-        base.AddQuestion(question8);
+        AddQ(question8);
 
         Question question9 = new Question(
-            "",
-            new string[] {""},
+            "What number was the Apollo mission that successfully put a man on the moon for the first time in human history?",
+            new string[] {"1. Apollo 11", "2. Apollo 12", "3. Apollo 13", "4. Apollo 14"},
             0
         );
-        base.AddQuestion(question9);
+        AddQ(question9);
 
         Question question10 = new Question(
-            "",
-            new string[] {""},
-            0
+            "What is the official collective name for a group of unicorns?",
+            new string[] {"1. A sparkle", "2. A spell", "3. A Blessing"},
+            2
         );
-        base.AddQuestion(question10);
+        AddQ(question10);
+
+        Console.WriteLine(question10._questionText);
+
     }
 
+    // public void WriteOut()
+    //     {
+    //         foreach (var question in bank)
+    //     {
+    //         Console.WriteLine(question._questionText);
+    //     }
+    //     }
+
+
     //and the function that throws them all into the bank:
-    public void AddToBank()
-    {
-        foreach (Question question in _normies)
-        {
-            base.AddQuestion(question);
-        }
-    }
+    // public void AddToBank()
+    // {
+    //     foreach (Question question in )
+    //     {
+    //         base.AddQuestion(question);
+    //     }
+    // }
 }

@@ -1,12 +1,16 @@
 using System;
+using System.Reflection.Metadata;
 
 class Program
 {
     static void Main(string[] args)
     {
-        Quiz quiz = new Quiz();
-        Gadgets gadget = new Gadgets();
         QuestionBank questionBank = new QuestionBank();
+        NormieBank normieBank = new NormieBank();
+        NerdBank nerdBank = new NerdBank();
+        Scoreboard scoreboard = new Scoreboard();
+        Quiz quiz = new Quiz(questionBank, scoreboard);
+        Gadgets gadget = new Gadgets();
         int menuChoice = 0;
 
         while (menuChoice != 4)
@@ -23,10 +27,42 @@ class Program
             Console.Write("Pick a mode, any mode: ");
             menuChoice = int.Parse(Console.ReadLine());
 
+            //choose a game category
             if (menuChoice == 1)
             {
-                quiz.MakeDaBank();
-                quiz.AskQuestion();
+                gadget.TypeLine(quiz.Intro());
+
+                Console.WriteLine("\n What category would you like to play? ");
+                Console.WriteLine("1. General  OR  2. Halo: ");
+                int userChoice = int.Parse(Console.ReadLine());
+
+                if (userChoice == 1)
+                {
+                    Console.WriteLine("Normie stuff it is!");
+                    Console.Write("Getting the quiz ready... ");
+                    gadget.Spinner();
+                    Quiz normieQuiz = new Quiz(normieBank, scoreboard);
+
+                    normieQuiz.AskQuestion();
+                }
+
+                else if (userChoice == 2)
+                {
+                    Console.WriteLine("Halo stuff it is!");
+                    Console.Write("Getting the quiz ready... ");
+                    gadget.Spinner();
+                    Quiz nerdQuiz = new Quiz(nerdBank, scoreboard);
+
+                    nerdQuiz.AskQuestion();
+                }
+
+                else
+                {
+                    Console.WriteLine("Oops, that wasn't an option!");
+                    Console.Write("Restarting... ");
+                    gadget.CountDown(4);
+                }
+
             }
 
             else if (menuChoice == 2)
