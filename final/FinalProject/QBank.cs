@@ -13,6 +13,7 @@ class QuestionBank
         bank.Add(question);
     }
 
+    //Used to avoid duplicate questions
     public void UsedQuestion(Question question)
     {
         bank.Remove(question);
@@ -26,6 +27,7 @@ class QuestionBank
         return picked;
     }
 
+    //used in case all the questions have been removed to avoid an error code
     public bool BankEmpty()
     {
         return bank.Count() <= 0;

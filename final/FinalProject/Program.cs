@@ -36,7 +36,7 @@ class Program
             //choose a game category
             if (menuChoice == 1)
             {
-                //gadget.TypeLine(quiz.Intro());
+                gadget.TypeLine(quiz.Intro());
 
                 Console.WriteLine("\n What category would you like to play? ");
                 Console.WriteLine("1. General  OR  2. Halo: ");
@@ -75,7 +75,7 @@ class Program
 
             else if (menuChoice == 2)
             {
-                Console.WriteLine(timedQuiz.Intro());
+                gadget.TypeLine(timedQuiz.Intro());
 
                 //from here, same setup as a regular quiz
                 Console.WriteLine("\n What category would you like to play? ");
@@ -120,6 +120,7 @@ class Program
 
             else if (menuChoice == 4)
             {
+                //in case the user wants to keep their score and retry the quizes once the questions have been exhausted
                 Console.WriteLine("\nWhich bank would you like to reset? \n1. General Trivia, 2. Halo Trivia, OR 3. Both");
                 Console.WriteLine("You can also press 4 just to reset your score.");
                 Console.WriteLine("(Any other number to go back): ");

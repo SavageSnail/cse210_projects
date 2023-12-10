@@ -10,6 +10,7 @@ class NormieBank: QuestionBank
         CompileQuestions();
     }
     
+    //throw em all in the bank
     public void CompileQuestions()
     {
         // been trying to add these "question" objects a couple different ways now
@@ -85,21 +86,4 @@ class NormieBank: QuestionBank
 
     }
 
-    // public void WriteOut()
-    //     {
-    //         foreach (var question in bank)
-    //     {
-    //         Console.WriteLine(question._questionText);
-    //     }
-    //     }
-
-
-    //and the function that throws them all into the bank:
-    // public void AddToBank()
-    // {
-    //     foreach (Question question in )
-    //     {
-    //         base.AddQuestion(question);
-    //     }
-    // }
 }

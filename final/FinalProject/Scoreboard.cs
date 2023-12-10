@@ -12,6 +12,7 @@ class Scoreboard
 
     public void EarnPoint(Question question, int userChoice)
     {
+        //adjust to match user input
         int _correct = question.GetIndex() +1;
 
         if (_correct == userChoice)
@@ -24,6 +25,7 @@ class Scoreboard
         }
         else
         {
+            //had to be a little mean to raise the stakes a bit haha
             Console.WriteLine($"WRONG!! The correct answer is #{_correct}. Better luck next time!");
             Console.WriteLine($"Score: {score}");
             gadget.Spinner();
