@@ -48,4 +48,19 @@ class Gadgets
             Thread.Sleep(30);
         }
     }
+
+    public void BlinkWord(string word)
+    {
+        Console.Clear();
+        Console.Write(word);
+        Thread.Sleep(300);
+        Console.Clear();
+        Thread.Sleep(200);
+        Console.Write(word);
+        Thread.Sleep(300);
+        Console.Clear();
+        Thread.Sleep(200);
+        Console.Write(word);
+        Thread.Sleep(500);
+    }
 }

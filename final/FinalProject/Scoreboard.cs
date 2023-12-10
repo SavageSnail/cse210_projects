@@ -12,7 +12,7 @@ class Scoreboard
 
     public void EarnPoint(Question question, int userChoice)
     {
-        int _correct = question._correctIndex +1;
+        int _correct = question.GetIndex() +1;
 
         if (_correct == userChoice)
         {
@@ -30,9 +30,15 @@ class Scoreboard
         }
     }
 
-    public void ShowScore()
+    //this is for the timed quiz to add the score there to the total score
+    public void AddScore(int addedscore)
     {
-        Console.WriteLine($"Your current score is: {score}");
+        score = score + addedscore;
+    }
+
+    public string ShowScore()
+    {
+        return $"Your current score is: {score}";
     }
 
 

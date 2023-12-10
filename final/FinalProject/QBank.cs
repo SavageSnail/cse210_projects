@@ -22,9 +22,7 @@ class QuestionBank
     {
         Random random = new Random();
         int pickedInd = random.Next(0, bank.Count());
-        Console.WriteLine(bank.Count());
         Question picked = bank[pickedInd];
-        Console.WriteLine(picked._questionText);
         return picked;
     }
 

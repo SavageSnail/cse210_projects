@@ -3,13 +3,13 @@ using System.Security.Cryptography.X509Certificates;
 
 class NormieBank: QuestionBank
 {
-    //general trivia
+    //general trivia - inherit and encapsulate
     //idea is to compile a question bank when called
     public NormieBank()
     {
         CompileQuestions();
     }
-    // I think this is somehow adding null questions??
+    
     public void CompileQuestions()
     {
         // been trying to add these "question" objects a couple different ways now
@@ -56,7 +56,7 @@ class NormieBank: QuestionBank
         AddQ(question6);
 
         Question question7 = new Question(
-            "What city hosted the 2002 Olympic games?",
+            "What city hosted the 2000 Olympic games?",
             new string[] {"1. Tokyo", "2. Beijing", "3. Sydney"},
             2
         );
@@ -82,8 +82,6 @@ class NormieBank: QuestionBank
             2
         );
         AddQ(question10);
-
-        Console.WriteLine(question10._questionText);
 
     }
 
